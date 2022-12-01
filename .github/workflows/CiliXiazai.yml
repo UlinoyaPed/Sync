@@ -1,9 +1,9 @@
-name: Computer
+name: CiliXiazai
 
 on:
   push:
     tags:
-      - "*"
+      - "cili.*"
       
 jobs:
   start:
@@ -30,11 +30,10 @@ jobs:
           **/node_modules
         key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
       
-    - name: DL
+    - name: Xiazai_cili
       run: |
         mkdir ./download
         cd ./download
-        # wget -i ./download_list.txt
         npm install -g t-get
         tget 'magnet:?xt=urn:btih:B5F99C5276CBD4180DB395AAC1910544B2F78E62'
         
