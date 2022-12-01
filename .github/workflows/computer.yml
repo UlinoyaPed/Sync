@@ -15,7 +15,14 @@ jobs:
       
     - name: Dl
       run: |
-        ./download.sh
+        mkdir ./download
+        cd ./download
+        wget -i ./download_list.txt
+        
+        apt install -y npm
+        npm install -g t-get
+        tget 'magnet:?xt=urn:btih:EECDC83008333BC6A69A1458663CE4741B515921'
+        
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
       if: startsWith(github.ref, 'refs/tags/')
