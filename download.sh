@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bssh
 
 mkdir ./download
 cd ./download
