@@ -7,7 +7,7 @@ on:
       
 jobs:
   start:
-    runs-on: ubantu-latest
+    runs-on: ubuntu-latest
     
     steps:
     - name: Checkout source
