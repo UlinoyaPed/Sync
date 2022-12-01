@@ -2,8 +2,8 @@ name: Computer
 
 on:
   push:
-    paths:
-      - 'start.txt'
+    tags:
+      - "*"
       
 jobs:
   start:
@@ -13,8 +13,19 @@ jobs:
     - name: Checkout source
       uses: actions/checkout@v2
       
-    - name: Setup
+    - name: Dl
       run: |
-        sshd
-        chmod +x ./frpc
-        ./frpc -c frpc_freefrp.ini
+        mkdir ./download
+        wget -P ./download -i ./download_list.txt
+      
+    - name: Create Release and Upload Release Asset
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        tag_name: ${{ github.ref }}
+        name: Release ${{ github.ref }}
+        body: Download
+        draft: false
+        prerelease: false
+        files: |
+          ./download/*
