@@ -13,17 +13,28 @@ jobs:
     - name: Checkout source
       uses: actions/checkout@v2
       
-    - name: Setup Node.js
+    # 设置Node环境 actions/setup-node@v1 是GitHub Marketplace其中的一个,相当于一个方法
+    # 使用一个Actions 使用uses关键字,  with表明参数
+    - name: Setup Node
       uses: actions/setup-node@v1
-       with:
-          node-version: '16'
+      with:
+        node-version: '10.x'
+ 
+    # 使用多路径的缓存帮助构建
+    - name: Cache multiple paths
+      uses: actions/cache@v2
+      with:
+        path: |
+          ~/cache
+          !~/cache/exclude
+          **/node_modules
+        key: ${{ runner.os }}-${{ hashFiles('**/lockfiles') }}
       
-    - name: Dl
+    - name: DL
       run: |
         mkdir ./download
         cd ./download
-#        wget -i ./download_list.txt
-        
+        # wget -i ./download_list.txt
         npm install -g t-get
         tget 'magnet:?xt=urn:btih:EECDC83008333BC6A69A1458663CE4741B515921'
         
