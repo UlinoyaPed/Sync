@@ -1,7 +1,5 @@
 name: Computer
 
-permissions: read-all|write-all
-
 on:
   push:
     paths:
