@@ -16,10 +16,7 @@ jobs:
     - name: Dl
       run: |
         mkdir ./download
-        mkdir ./cache
-        wget -P ./cache -i ./download_list.txt
-        cd ./cache
-        tar -zcvf - output/* | split -d -b 1G - ../download/
+        wget -P ./download -i ./download_list.txt
               
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
