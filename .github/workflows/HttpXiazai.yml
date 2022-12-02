@@ -3,7 +3,7 @@ name: HttpXiazai
 on:
   push:
     tags:
-      - "http.**"
+      - "http.*"
       
 jobs:
   start:
