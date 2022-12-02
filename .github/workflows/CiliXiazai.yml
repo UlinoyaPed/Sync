@@ -35,6 +35,8 @@ jobs:
         cd ./download
         npm install -g t-get
         tget 'magnet:?xt=urn:btih:90FDC7439EC115FB1081C379F1E3F8A5F653E838'
+        dir=$(ls)
+        cd $dir
         fname=$(ls *.mp4*)
         echo $fname
         split -b 15000m $fname $fname\_
