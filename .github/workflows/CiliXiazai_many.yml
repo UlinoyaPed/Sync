@@ -46,7 +46,7 @@ jobs:
         echo ====fname====
         echo $fname
         echo ====split file====
-        split -b 1500M --verbose $fname $fname\_
+        split -b 2000M --verbose $fname $fname\_
         echo ====after split====
         ls
         rm -f $fname
