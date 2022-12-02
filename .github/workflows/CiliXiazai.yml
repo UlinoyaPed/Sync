@@ -49,7 +49,8 @@ jobs:
         files: |
           ./download/*
           
-    - name: Upload artifact
-      with: actions/upload-artifact@v2
-        name: CiliXiazai
-        path: download
+- name: Upload artifacts
+        uses: actions/upload-artifact@master
+        with:
+          name: xiazai-artifacts
+          path: download
