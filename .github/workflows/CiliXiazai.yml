@@ -4,7 +4,7 @@ on:
   push:
     tags:
       - "cili.*"
-      
+      - "http.cili.*"
 jobs:
   start:
     runs-on: ubuntu-latest
@@ -35,7 +35,7 @@ jobs:
         mkdir ./download
         cd ./download
         npm install -g t-get
-        tget 'magnet:?xt=urn:btih:3B9D1792D58A126178450ECF8CBDEFD39A4F7921'
+        tget 'magnet:?xt=urn:btih:90FDC7439EC115FB1081C379F1E3F8A5F653E838'
         
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1

@@ -1,0 +1,32 @@
+name: HttpXiazai
+
+on:
+  push:
+    tags:
+      - "http.*"
+      
+jobs:
+  start:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout source
+      uses: actions/checkout@v2
+            
+    - name: Xiazai_http
+      run: |
+        mkdir ./download
+        cd ./download
+        wget https://ncre.neea.edu.cn/res/Home/2012/1ab1f38f3a81af338dbb4f6495568f28.rar
+        
+    - name: Create Release and Upload Release Asset
+      uses: softprops/action-gh-release@v1
+      if: startsWith(github.ref, 'refs/tags/')
+      with:
+        tag_name: ${{ github.ref }}
+        name: Release ${{ github.ref }}
+        body: Download
+        draft: false
+        prerelease: false
+        files: |
+          ./download/*
