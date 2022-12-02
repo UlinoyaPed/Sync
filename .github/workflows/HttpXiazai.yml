@@ -22,9 +22,10 @@ jobs:
         fname=$(ls  *.*)
         echo $fname
         ls
-        split -b15000M --verbose $fname $fname\_
+        split -b1500M --verbose $fname $fname\_
         ls
         rm -f $fname
+        ls
         
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
