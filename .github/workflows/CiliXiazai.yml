@@ -4,7 +4,6 @@ on:
   push:
     tags:
       - "cili.*"
-      - "http.cili.*"
 jobs:
   start:
     runs-on: ubuntu-latest
@@ -49,7 +48,7 @@ jobs:
         files: |
           ./download/*
           
-- name: Upload artifacts
+    - name: Upload artifacts
         uses: actions/upload-artifact@v3
         with:
           path: ~/download/*
