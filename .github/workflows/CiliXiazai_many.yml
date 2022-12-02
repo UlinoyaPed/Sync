@@ -41,7 +41,7 @@ jobs:
         cd $dir
         echo ====folder $dir====
         ls
-        fname=$(ls *.mp4)
+        fname=$(ls *.mkv)
         echo ====fname====
         echo $fname
         echo ====split file====
