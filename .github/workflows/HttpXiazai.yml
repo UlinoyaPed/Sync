@@ -19,10 +19,13 @@ jobs:
         cd ./download
         wget -q https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso
         ls
+        
+    - name: Split
+      run: |
         fname=$(ls  *.*)
         echo $fname
         ls
-        split -b 15000M $fname $fname
+        split -b15000M $fname $fname\_
         ls
         rm -f $fname
         
