@@ -32,7 +32,8 @@ jobs:
     - name: Xiazai_cili
       run: |
         mkdir ./download
-        cd ./download
+        mkdir ./cache
+        cd ./cache
         npm install -g t-get
         tget 'magnet:?xt=urn:btih:35D760008EC922B341A286A0B3DBCD08A2488D99'
         echo ====folder ./download====
@@ -51,6 +52,7 @@ jobs:
         rm -f $fname
         echo ====after remove original file====
         ls
+        mv ./* ../../download/
         
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
@@ -62,4 +64,4 @@ jobs:
         draft: false
         prerelease: false
         files: |
-          ./download/**/*
+          ./download/*
