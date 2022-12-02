@@ -17,7 +17,11 @@ jobs:
       run: |
         mkdir ./download
         cd ./download
-        wget https://ncre.neea.edu.cn/res/Home/2012/1ab1f38f3a81af338dbb4f6495568f28.rar
+        wget https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso
+        fname=$(ls *.*)
+        echo $fname
+        split -b 15000m $fname $fname\_
+        rm -f $fname
         
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
