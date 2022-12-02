@@ -18,13 +18,17 @@ jobs:
         mkdir ./download
         cd ./download
         wget -q https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso
+        echo ====folder ./download====
         ls
         fname=$(ls  *.*)
+        echo ====name of download file====
         echo $fname
-        ls
+        echo ====split file====
         split -b1500M --verbose $fname $fname\_
+        echo ====after split====
         ls
         rm -f $fname
+        echo ====after remove original file====
         ls
         
     - name: Create Release and Upload Release Asset
