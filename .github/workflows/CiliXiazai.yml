@@ -3,8 +3,8 @@ name: CiliXiazai
 on:
   push:
     tags:
-      - "cili.*"
-      - "http.cili.*"
+      - "cili.**"
+      - "http.cili.**"
 jobs:
   start:
     runs-on: ubuntu-latest
@@ -51,5 +51,5 @@ jobs:
           
     - name: Upload artifact
       with: actions/upload-artifact@v2
-        name: Xiazai_cili_${{ github.ref }}
+        name: Xiazai_cili
         path: ${{ env.GITHUB_WORKSPACE }}/download
