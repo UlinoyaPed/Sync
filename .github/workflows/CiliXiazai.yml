@@ -48,3 +48,8 @@ jobs:
         prerelease: false
         files: |
           ./download/*
+          
+    - name: Upload artifact
+      with: actions/upload-artifact@v2
+        name: Xiazai_cili_${{ github.ref }}
+        path: ${{ env.GITHUB_WORKSPACE }}/download
