@@ -52,7 +52,7 @@ jobs:
         rm -f $fname
         echo ====after remove original file====
         ls
-        mv ./* ../../download/
+        mv ./$fname\_* ../../download/
         
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
