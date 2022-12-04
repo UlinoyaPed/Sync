@@ -23,9 +23,8 @@ jobs:
         fname=$(ls  *.*)
         echo ====name of download file====
         echo $fname
-        cd $fname
         echo ====split file====
-        split -b1500M --verbose $fname $fname\_
+        split -b1999M --verbose $fname $fname\_
         echo ====after split====
         ls
         rm -f $fname
