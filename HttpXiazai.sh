@@ -1,5 +1,6 @@
 #!/bin/sh
 
+rootdir=$(pwd)
 mkdir ./download
 cd ./download
 wget -q https://releases.ubuntu.com/22.04.1/ubuntu-22.04.1-desktop-amd64.iso
