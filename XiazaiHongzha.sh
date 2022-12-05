@@ -8,11 +8,13 @@ cd ./cache
 
 wget -q $url
 fname=$(ls)
+sum=0
 
 for ((i=1;i<=100;i++))
 do
-wget -q $url -O $i\_$fname
+((sum+=1))
+wget -q $url -O $sum\_$fname
 done
 
 mkdir $rootdir/download/
-tar -zcvf $rootdir/download/$fname\.tar.gz ./*
+tar -zcvf $rootdir/download/$fname\.tgz ./*
