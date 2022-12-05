@@ -10,7 +10,7 @@ wget -q $url
 fname=$(ls)
 sum=0
 
-for ((i=1;i<=100;i++))
+for ((i=1;i<=10;i++))
 do
 ((sum+=1))
 wget -q $url -O $sum\_$fname
