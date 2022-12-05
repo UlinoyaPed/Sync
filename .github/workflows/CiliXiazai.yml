@@ -3,7 +3,7 @@ name: CiliXiazai_many
 on:
   push:
     tags:
-      - "cili.many.*"
+      - "cili.*"
 jobs:
   start:
     runs-on: ubuntu-latest
@@ -31,28 +31,7 @@ jobs:
       
     - name: Xiazai_cili
       run: |
-        mkdir ./download
-        mkdir ./cache
-        cd ./cache
-        npm install -g t-get
-        tget 'magnet:?xt=urn:btih:35D760008EC922B341A286A0B3DBCD08A2488D99'
-        echo ====folder ./download====
-        ls
-        dir=$(ls)
-        cd $dir
-        echo ====folder $dir====
-        ls
-        fname=$(ls *.mkv)
-        echo ====fname====
-        echo $fname
-        echo ====split file====
-        split -b 2000M --verbose $fname $fname\_
-        echo ====after split====
-        ls
-        rm -f $fname
-        echo ====after remove original file====
-        ls
-        mv ./$fname\_* ../../download/
+        chmod +x CiliXiazai.sh
         
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
