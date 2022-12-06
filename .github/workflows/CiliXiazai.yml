@@ -34,12 +34,13 @@ jobs:
         chmod +x CiliXiazai.sh
         ./CiliXiazai.sh
         
-    - name: Create GitHub release
-      uses: marvinpinto/action-automatic-releases@latest
+    - name: Create Release and Upload Release Asset
+      uses: softprops/action-gh-release@v1
       with:
-        repo_token: "${{ secrets.GITHUB_TOKEN }}"
-        automatic_release_tag: ${{ env.ReleaseVersion }}
-        title: ${{ env.ReleaseVersion }}
+        tag_name: ${{ github.ref }}
+        name: Release ${{ github.ref }}
+        body: Download
+        draft: false
         prerelease: false
         files: |
           ./download/*
