@@ -11,7 +11,7 @@ cd $rootdir/cache
 
 npm install -g t-get
 
-tget 'magnet:?xt=urn:btih:6FDCC3AAEDAAA409B329736358F4C4604B30F788'
+tget 'magnet:?xt=urn:btih:081E68AFF97C54EC3B261E99B293732519D6BC50'
 
 echo ====folder $(pwd)====
 ls
