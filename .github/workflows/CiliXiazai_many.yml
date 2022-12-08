@@ -1,9 +1,9 @@
-name: CiliXiazai
+name: CiliXiazai-many
 
 on:
   push:
     tags:
-      - "cili.*"
+      - "clmany.*"
 jobs:
   start:
     runs-on: ubuntu-latest
@@ -31,8 +31,8 @@ jobs:
       
     - name: Xiazai_cili
       run: |
-        chmod +x CiliXiazai.sh
-        ./CiliXiazai.sh
+        chmod +x Clmany.sh
+        ./Clmany.sh
         
     - name: Create Release and Upload Release Asset
       uses: softprops/action-gh-release@v1
