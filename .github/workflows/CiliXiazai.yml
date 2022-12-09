@@ -1,9 +1,7 @@
 name: CiliXiazai
 
-on:
-  push:
-    tags:
-      - "cili.*"
+on: workflow_dispatch
+
 jobs:
   start:
     runs-on: ubuntu-latest
