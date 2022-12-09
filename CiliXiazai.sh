@@ -11,7 +11,7 @@ cd $rootdir/cache
 
 npm install -g t-get
 
-tget 'magnet:?xt=urn:btih:081E68AFF97C54EC3B261E99B293732519D6BC50'
+tget 'magnet:?xt=urn:btih:5b4848cc863505df9c1a0e8ade329bf66d151141&dn=Mad+Games+Tycoon+2+V2022.12.02B&tr=udp%3A%2F%2Ftracker.opentrackr.org%3A1337&tr=udp%3A%2F%2Ftracker.torrent.eu.org%3A451&tr=udp://tracker.internetwarriors.net:1337&tr=udp%3A%2F%2Fexodus.desync.com%3A6969'
 
 echo ====folder $(pwd)====
 ls
